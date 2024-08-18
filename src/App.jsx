@@ -1,10 +1,11 @@
+import Navbar from "./components/modules/Navbar/Navbar"
 
 
 function App() {
   return (
-    <div>
-      app
-    </div>
+    <>
+      <Navbar/>
+    </>
   )
 }
 

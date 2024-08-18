@@ -28,7 +28,7 @@
 }
 /* <<<< containers >>>> */
 .containers{
-  max-width: 1024px;
+  width: 64rem;
   margin-left: auto;
   margin-right: auto;
   padding-right: 1rem;
@@ -43,3 +43,4 @@ body{
   background-color: var(--white) !important;
   box-sizing: border-box;
 }
+  
