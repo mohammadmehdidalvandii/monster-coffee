@@ -3,15 +3,15 @@
 /* <<<< Import Fonts >>>> */
 @font-face {
   font-family: danaMedium;
-  src: url("/public/font/Dana-Medium.woff") , format(woff);
+  src: url("/font/Dana-Medium.woff") , format(woff);
 }
 @font-face {
   font-family: danaBold;
-  src: url("/public/font/Dana-Bold.woff") , format(woff);
+  src: url("/font/Dana-Bold.woff") , format(woff);
 }
 @font-face {
   font-family: danaBlack;
-  src: url("/public/font/Dana-Black.woff"),  format(woff);
+  src: url("/font/Dana-Black.woff"),  format(woff);
 }
 /* <<<< :root Variable >>>> */
 :root{
