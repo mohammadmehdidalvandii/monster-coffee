@@ -1,0 +1,6 @@
+.title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 1.77rem;
+    color: var(--primary);
+}
