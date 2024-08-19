@@ -13,7 +13,7 @@ function Navbar() {
 
 
   return (
-    <section className="navbar">
+    <section className="navBar">
         <div className="containers">
             <div className="navbar_Wrapper">
                 <h1 className="navbar_title">صبح بخیر قهوه شما امادست!</h1>
