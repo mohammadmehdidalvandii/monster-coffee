@@ -58,6 +58,7 @@
     width: 320px;
     height: 100dvh;
     background-color: var(--white);
+    border-left: 2px solid var(--primary);
     z-index: 999999;
     animation: showMenu linear 0.5s forwards ;
 }
