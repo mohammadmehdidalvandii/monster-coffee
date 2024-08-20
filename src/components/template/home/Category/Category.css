@@ -7,16 +7,22 @@
 .category_item{
     display: block;
     text-align: center;
+    text-decoration: none;
     width: 100%;
     border-radius: 0.6rem;
     overflow: hidden;
     margin-bottom: 1rem;
+    transition: all 0.4 linear;
+}
+.category_item:hover .category_item_img{
+    transform: rotate(8deg);
 }
 .category_item_img{
     width: 100%;
     border-radius: 0.6rem;
     box-shadow: 0 1px 15px var(--primary);
     object-fit: cover;
+    transition: all 0.4s linear;
 }
 .category_item_title{
     display: block;
