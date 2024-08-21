@@ -1,0 +1,156 @@
+.locations{
+    display: block;
+    width: 100%;
+    margin-bottom: 8rem;
+}
+.locations_wrapper{
+    display: block;
+    width: 100%;
+}
+.locations_search{
+    display: flex;
+    align-items: center;
+    background-color: var(--info);
+    height: 3.5rem;
+    border-radius: 0.4rem;
+}
+.locations_search_icon{
+    font-size: 1.5rem;
+    padding-right: 0.2rem;
+    cursor: pointer;
+    transition: all 0.4s linear;
+    &:hover{
+        color: var(--primary);
+    }
+}
+.locations_search_input{
+    width: 100%;
+    height: inherit;
+    background-color: unset;
+    outline: none;
+    border: none;
+    font-family: var(--danaBold);
+    font-size: 1.1rem;
+    padding-right: 0.3rem;
+    color: var(--primary);
+}
+.locations_search_input::placeholder{
+    font-family: var(--danaBold);
+    padding-right: 0.3rem;
+    color: var(--secondary);
+}
+
+.locations_menu{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: var(--white);
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 10px var(--info);
+    gap: 10px;
+}
+.location_item{
+    display: inline;
+    width: 100%;
+}
+.location_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    background-color: var(--info);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary);
+    transition: all 0.4s linear;
+    &:hover{
+        background-color: var(--primary);
+        color: var(--white);
+    }
+}
+.location_btn_active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    background-color: var(--info);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--primary);
+}
+.location_menu_site{
+    display: block;
+    margin-top: 2rem;
+}
+.cards{
+    display: flex;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    background-color: var(--white);
+    box-shadow: 0 0 15px var(--info);
+}
+.card_img{
+    width:100px;
+}
+.card_content{
+    display: block;
+    margin-right: 0.5rem;
+}
+.card_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+.card_address{
+    display: flex;
+    align-items: center;
+    font-size: 0.5rem;
+    color: var(--success);
+}
+.card_address_icon{
+  color: red;
+}
+.card_address_text{
+margin-right: 0.2rem;
+}
+.card_rete{
+    display: flex;
+    align-items: center;
+    margin: 0.4rem 0;
+}
+.card_rete_text{
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.card_rete_icon{
+    color: var(--yellow);
+    margin-right: 0.2rem;
+}
+.card_time{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+.card_time_text{
+
+}
+.card_time_text{
+
+}
