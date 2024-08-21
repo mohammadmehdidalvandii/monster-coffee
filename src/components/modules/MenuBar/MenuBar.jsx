@@ -1,16 +1,26 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './MenuBar.css';
 import { FaHeart, FaHouse, FaLocationDot, FaUser } from 'react-icons/fa6';
 import { BsShop } from 'react-icons/bs';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 function MenuBar() {
+    const locations = useLocation();
+    const [activeMenu , setActiveMen] = useState('/')
+    
+    useEffect(()=>{
+        const pathName= locations.pathname;
+        setActiveMen(pathName);
+        window.scroll(0,0)
+    },[locations])
+
   return (
     <section className="menuBar">
         <div className="containers">
             <ul className="menuBar_menu">
                 <li className="menuBar_item">
-                    <Link to='/' className='menuBar_item_link'>
+                    <Link to='/' className={activeMenu === '/' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaHouse/>
                         </span>
@@ -18,7 +28,7 @@ function MenuBar() {
                     </Link>
                 </li>
                 <li className="menuBar_item">
-                    <Link to='/Location' className='menuBar_item_link'>
+                    <Link to='/Location' className={activeMenu === '/Location' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaLocationDot/>
                         </span>
@@ -26,7 +36,7 @@ function MenuBar() {
                     </Link>
                 </li>
                 <li className="menuBar_item">
-                    <Link to='/Shop' className='menuBar_item_link'>
+                    <Link to='/Shop' className={activeMenu === '/Shop' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <BsShop/>
                         </span>
@@ -34,7 +44,7 @@ function MenuBar() {
                     </Link>
                 </li>
                 <li className="menuBar_item">
-                    <Link to='/ShoppingCard' className='menuBar_item_link'>
+                    <Link to='/ShoppingCard' className={activeMenu === '/ShoppingCard' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaShoppingCart/>
                         </span>
@@ -42,7 +52,7 @@ function MenuBar() {
                     </Link>
                 </li>
                 <li className="menuBar_item">
-                    <Link to='/favorite' className='menuBar_item_link'>
+                    <Link to='/Favorite' className={activeMenu === '/favorite' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaHeart/>
                         </span>
@@ -50,7 +60,7 @@ function MenuBar() {
                     </Link>
                 </li>
                 <li className="menuBar_item">
-                    <Link to='/Profile' className='menuBar_item_link'>
+                    <Link to='/Profile' className={activeMenu === '/Profile' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaUser/>
                         </span>

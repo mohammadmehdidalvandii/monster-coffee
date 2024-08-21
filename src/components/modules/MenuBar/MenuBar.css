@@ -26,6 +26,12 @@
     color: var(--success);
     transition: all 0.4s linear;
 }
+.menuBar_item_link_active{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary);
+}
 .menuBar_item_link:hover{
     color: var(--primary);
 }
