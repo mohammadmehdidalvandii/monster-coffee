@@ -1,10 +1,9 @@
-import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function Navbar() {
-    const [showMenu , setShowMenu] = useState(false);
     const [fixNavTop , setFixNavTop] = useState(false);
 
     useEffect(()=>{
@@ -21,10 +20,6 @@ function Navbar() {
         return ()=> window.removeEventListener("scroll" ,fixNavbarToTop);
     },[])
 
-    const handlerShowMenu = ()=>{
-        setShowMenu(!showMenu)
-        
-    }
 
 
   return (
@@ -32,7 +27,7 @@ function Navbar() {
         <div className="containers">
             <div className={fixNavTop ? "navbar_Wrapper_fixed":"navbar_Wrapper"}>
                 <h1 className="navbar_title">صبح بخیر قهوه شما امادست!</h1>
-                <span className="navbar_icons" onClick={handlerShowMenu}>
+                {/* <span className="navbar_icons" onClick={handlerShowMenu}>
                     {showMenu ?(
                            <FaTimes/>
                     ):(
@@ -59,7 +54,10 @@ function Navbar() {
                             <Link to='#' className='navbar_link'>سفارش</Link>
                         </li>
                     </ul>
-                </div>
+                </div> */}
+                <Link to='/' className='navbar_logo'>
+                    <img src="/images/logo.png" alt="" className="navbar_logo_img" />
+                </Link>
             </div>
             <div className="navbar_search">
                 <span className="navbar_search_icon">
