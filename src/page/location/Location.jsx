@@ -1,8 +1,11 @@
+import Breadcrumb from "../../components/modules/Breadcrumb/Breadcrumb"
 
 
 function Location() {
   return (
-    <div>Location</div>
+    <>
+    <Breadcrumb title="نزدیکترین"/>
+    </>
   )
 }
 
