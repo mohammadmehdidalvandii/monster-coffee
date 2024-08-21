@@ -5,7 +5,7 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 
 function Breadcrumb({title}) {
   return (
-    <section className="breadcrumb">
+    <section className="breadcrumbs">
         <div className="containers">
             <div className="breadcrumb_wrapper">
                 <Link to='/' className='breadcrumb_link'>
