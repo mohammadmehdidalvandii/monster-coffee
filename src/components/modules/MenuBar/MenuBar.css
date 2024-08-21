@@ -1,0 +1,40 @@
+.menuBar{
+    display: block;
+    width: 100%;
+    padding-top: 1rem;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid var(--primary);
+    background-color: var(--white);
+    z-index: 999999999;
+}
+
+.menuBar_menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.menuBar_item{
+    display: block;
+    width: 100%;
+}
+.menuBar_item_link{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--success);
+    transition: all 0.4s linear;
+}
+.menuBar_item_link:hover{
+    color: var(--primary);
+}
+.menuBar_link_icon{
+display: block;
+font-size: 1.2rem;
+}
+.menuBar_link_text{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
