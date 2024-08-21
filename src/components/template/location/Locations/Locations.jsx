@@ -37,6 +37,12 @@ function Locations() {
                         onClick={()=>handleMenuLocations("shop")}
                         >فروشگاه</button>
                     </li>
+                    <li className="location_item">
+                        <button 
+                        className={locationMenu === "coffee-shop" ?"location_btn_active" :"location_btn"}
+                        onClick={()=>handleMenuLocations("coffee-shop")}
+                        >کافی شاپ</button>
+                    </li>
                 </ul>
 
                 <div className="location_menu_site">
@@ -50,6 +56,16 @@ function Locations() {
                         </>
                     )}
                     {locationMenu === "shop" &&(
+                        <>
+                            <Cards/>
+                            <Cards/>
+                            <Cards/>
+                            <Cards/>
+                            <Cards/>
+                            <Cards/>
+                        </>
+                    )}
+                    {locationMenu === "coffee-shop" &&(
                         <>
                             <Cards/>
                             <Cards/>
