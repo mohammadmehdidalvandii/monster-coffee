@@ -1,0 +1,84 @@
+.basket{
+    display: block;
+    width: 100%;
+    margin-bottom: 8rem;
+}
+
+.basket_content_empty{
+    display: block;
+    text-align: center;
+    margin-top: 4rem;
+}
+.basket_empty_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 3rem;
+    color: var(--secondary);
+}
+.basket_empty_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 1.5rem auto;
+    height: 3rem;
+    border-radius: 0.5rem;
+    width: 130px;
+    background-color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    transition: all 0.4s linear;
+    &:hover{
+        background-color: var(--info);
+        color: var(--secondary);
+    }
+}
+
+.basket_bill{
+    display: block;
+    border-top: 1px solid var(--success);
+    padding-top: 1.5rem;
+}
+.basket_bill_items{
+    display: block;
+}
+.basket_bill_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 5px;
+}
+.basket_bill_title{
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--secondary);
+}
+.basket_bill_number{
+    font-family: var(--danaBlack);
+    font-size: 1.5rem;
+    color: var(--primary);
+
+}
+.basket_bill_pay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 1rem;
+    width: 100%;
+    height: 3rem;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    transition: all 0.4s linear;
+    &:hover{
+        background-color: var(--info);
+        color: var(--secondary);
+    }
+}
