@@ -31,5 +31,6 @@
 }
 .breadcrumb_title{
     display: block;
+    margin-top: 0.6rem;
     font-family: var(--danaBlack);
 }
