@@ -1,0 +1,102 @@
+.shoppingCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: var(--white);
+    box-shadow: 0 0  25px var(--info);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+}
+.shoppingCard_content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-block: 1rem;
+}
+.shoppingCard_img{
+    width: 120px;
+}
+.shoppingCard_details{
+    display: block;
+    margin-right: 0.3rem;
+    padding-top: 0.4rem;
+}
+.shoppingCard_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+.shoppingCard_time{
+    display: block;
+    margin: 0.3rem 0;
+    color: var(--success);
+}
+.shoppingCard_price{
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+.shoppingCard_action{
+    display: block;
+    text-align: center;
+    margin-block: 1rem  ;
+}
+.shoppingCard_remove{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 2.5rem;
+    background-color: red;
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+    transition: all 0.4s linear;
+    &:hover{
+        background-color: var(--info);
+        color: var(--secondary);
+    }
+}
+.shoppingCard_remove_text{
+    font-size: inherit;
+}
+.shoppingCard_remove_icon{
+    font-size: 1.2rem;
+}
+.shoppingCard_counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 7px;
+}
+.shoppingCard_countBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary);
+    background-color: var(--info);
+    transition: all 0.4s linear;
+    &:hover{
+        color: var(--white);
+        background-color: var(--primary);
+    }
+}
+.shoppingCard_count{
+    font-family: var(--danaBlack);
+    font-size: 1.2rem;
+    color: var(--secondary);
+}
