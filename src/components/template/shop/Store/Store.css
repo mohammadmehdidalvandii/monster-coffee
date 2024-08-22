@@ -1,0 +1,44 @@
+.store{
+    display: block;
+    width: 100%;
+    margin-bottom: 8rem;
+}
+.store_menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.store_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    background-color: var(--info);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary);
+    border-radius: 0.3rem;
+    transition: all 0.4s linear;
+    &:hover{
+        color: var(--white);
+        background-color: var(--primary);
+    }
+}
+.store_btn_active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    background-color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    border-radius: 0.3rem;
+    scale: 0.9;
+}
