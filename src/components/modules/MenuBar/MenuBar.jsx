@@ -44,7 +44,7 @@ function MenuBar() {
                     </Link>
                 </li>
                 <li className="menuBar_item">
-                    <Link to='/ShoppingCard' className={activeMenu === '/ShoppingCard' ? "menuBar_item_link_active" :"menuBar_item_link"}>
+                    <Link to='/Shopping' className={activeMenu === '/Shopping' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaShoppingCart/>
                         </span>
