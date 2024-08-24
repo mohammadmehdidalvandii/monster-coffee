@@ -52,7 +52,7 @@ function MenuBar() {
                     </Link>
                 </li>
                 <li className="menuBar_item">
-                    <Link to='/Favorite' className={activeMenu === '/favorite' ? "menuBar_item_link_active" :"menuBar_item_link"}>
+                    <Link to='/Favorite' className={activeMenu === '/Favorite' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaHeart/>
                         </span>
