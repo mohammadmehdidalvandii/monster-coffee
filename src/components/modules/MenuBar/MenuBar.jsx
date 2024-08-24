@@ -60,7 +60,7 @@ function MenuBar() {
                     </Link>
                 </li>
                 <li className="menuBar_item">
-                    <Link to='/Profile' className={activeMenu === '/Profile' ? "menuBar_item_link_active" :"menuBar_item_link"}>
+                    <Link to='/Profiles' className={activeMenu === '/Profiles' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaUser/>
                         </span>
