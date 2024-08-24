@@ -5,6 +5,7 @@ import Shopping from "./page/Shopping/Shopping";
 import Favorite from "./page/Favorite/Favorite";
 import Profiles from "./page/Profiles/Profiles";
 
+
 const routes = [
     {path:"/" , element:<Home/>},
     {path:"/Location" , element:<Location/>},
