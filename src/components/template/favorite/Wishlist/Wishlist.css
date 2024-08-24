@@ -1,0 +1,35 @@
+.wishlist{
+    display: block;
+    width: 100%;
+    margin-bottom: 8rem;
+}
+.wishlist_empty{
+    display: block;
+    text-align: center;
+    margin-top: 4rem;
+}
+.wishlist_empty_title{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 3rem;
+    color: var(--secondary);
+}
+.wishlist_empty_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 1.5rem auto;
+    height: 3rem;
+    border-radius: 0.5rem;
+    width: 130px;
+    background-color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    transition: all 0.4s linear;
+    &:hover{
+        background-color: var(--info);
+        color: var(--secondary);
+    }
+}

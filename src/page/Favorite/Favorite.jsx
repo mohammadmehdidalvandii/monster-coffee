@@ -1,5 +1,6 @@
 
 import Breadcrumb from '../../components/modules/Breadcrumb/Breadcrumb'
+import Wishlist from '../../components/template/favorite/Wishlist/Wishlist'
 import HeadTitle from '../../utils/HeadTitle'
 
 function Favorite() {
@@ -7,6 +8,7 @@ function Favorite() {
   return (
    <>
    <Breadcrumb title='مورد علاقه'/>
+   <Wishlist/>
    </>
   )
 }
