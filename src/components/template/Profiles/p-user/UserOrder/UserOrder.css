@@ -1,0 +1,74 @@
+.userOrder{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+.userOder_wrapper{
+    display: block;
+}
+.userOrder_title{
+    display: block;
+    width: 100%;
+    font-family: var(--danaBlack);
+    font-size: 2rem;
+    color: var(--primary);
+}   
+
+.userOrder_item{
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--white);
+    box-shadow: 0 0 20px var(--info);
+    border-radius: 0.5rem;
+}
+.userOrder_item_delivery{
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    border: 1px solid var(--primary);
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+}
+.userOrder_item_img{
+    display: block;
+}
+.userOrder_item_name{
+    display: block;
+    margin-right: 0.4rem;
+    font-family: var(--danaBlack);
+    font-size: 1.3rem;
+}
+
+.userOder_content{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.userOrder_content_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--success);
+    font-size: 1.5rem;
+    color: var(--primary);
+    border-radius: 0.5rem;
+}
+.userOrder_content_wrapper{
+    display: block;
+    margin-right: 0.4rem;
+}
+.userOrder_content_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+.userOrder_content_text{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--info);
+}
