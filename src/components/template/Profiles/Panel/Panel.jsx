@@ -1,3 +1,4 @@
+import Dashboard from '../P-admin/Dashboard/Dashboard';
 import UserInfo from '../p-user/UserInfo/UserInfo';
 import UserLoc from '../p-user/UserLoc/UserLoc';
 import UserOrder from '../p-user/UserOrder/UserOrder';
@@ -5,7 +6,7 @@ import './Panel.css';
 import { useState } from 'react';
 
 function Panel() {
-    const [panelMenu , setPanelMenu] = useState("Info || dashboard")
+    const [panelMenu , setPanelMenu] = useState(" Info || dashboard")
 
     const handlerPanelMenu=(panelID)=>{
         setPanelMenu(panelID);
@@ -50,7 +51,7 @@ function Panel() {
                         onClick={()=>handlerPanelMenu("coffee_list")}
                         >لیست قهوه کده</button>
                         <button className="panel_btn">خروج</button>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <div className="row mt-3">
@@ -59,8 +60,8 @@ function Panel() {
                     {panelMenu === "Loco" && (<UserLoc/>)}
                     {panelMenu === "FollowOrder" && (<UserOrder/>)}
                 </div> */}
-                <div className="col-12">
-                    {panelMenu === "Dashboard" && (<h1>Dashboard</h1>)}
+            <div className="col-12">
+                    {panelMenu === "Dashboard" && (<Dashboard/>)}
                     {panelMenu === "user_list" && (<h1>user_list</h1>)}
                     {panelMenu === "shop_list" && (<h1>shop_list</h1>)}
                     {panelMenu === "coffee_list" && (<h1>coffee_list</h1>)}

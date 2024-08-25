@@ -1,0 +1,36 @@
+.dashboard{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+.dashboard_wrapper{
+    display: block;
+    border-bottom: 1px solid var(--info);
+    padding-bottom: 1rem;
+}
+.dashboard_wrapper_text{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.1rem;
+    color: var(--secondary);
+}
+.dashboard_wrapper_name{
+    display: block;
+    font-family: var(--danaBlack);
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+.dashboard_content{
+    display: block;
+    text-align: center;
+}
+.dashboard_content_title{
+    font-family: var(--danaBlack);
+    font-size: 1.6rem;
+    color: var(--primary);
+}
+.dashboard_content_text{
+    font-family: var(--danaBold);
+    font-size: 1.3rem;
+    color: var(--secondary);
+}
