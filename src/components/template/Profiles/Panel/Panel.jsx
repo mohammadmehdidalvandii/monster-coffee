@@ -1,4 +1,5 @@
 import UserInfo from '../p-user/UserInfo/UserInfo';
+import UserLoc from '../p-user/UserLoc/UserLoc';
 import './Panel.css';
 import { useState } from 'react';
 
@@ -34,7 +35,7 @@ function Panel() {
             <div className="row mt-3">
                 <div className="col-12">
                     {panelMenu === "Info" && (<UserInfo/>)}
-                    {panelMenu === "Loco" && (<h1>loco</h1>)}
+                    {panelMenu === "Loco" && (<UserLoc/>)}
                     {panelMenu === "FollowOrder" && (<h1>order</h1>)}
                 </div>
             </div>

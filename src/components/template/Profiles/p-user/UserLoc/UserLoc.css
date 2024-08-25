@@ -1,0 +1,107 @@
+.userLoc{
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+.userLoc_wrapper{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.userLoc_img{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.userLoco_title{
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--danaBold);
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+.userLoco_text{
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;   
+    color: var(--secondary);
+}
+
+.userLoc_item{
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    box-shadow: 0 0 20px var(--info);
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.4s linear;
+}
+.userLoc_item:hover  :is(.userLoc_item_title , .userLoc_item_text){
+    color: var(--white);
+}
+.userLoc_item:hover{
+    background-color: var(--primary);
+}
+.userLoc_item_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    background-color: var(--info);
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+.userLoc_item_content{
+    display: block;
+    margin-right: 1rem;
+}
+.userLoc_item_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+.userLoc_item_text{
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.userLoc_item_active{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    box-shadow: 0 0 20px var(--info);
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    .userLoc_item_text{
+        color: var(--white);
+    }
+    .userLoc_item_title{
+        color: var(--white);
+    }
+}
+
+.userLoco_addNew{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    outline: none;
+    border: 1px solid ;
+    border-radius: 0.5rem;
+    background-color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    transition: all 0.4s linear;
+    &:hover{
+        background-color: unset;
+        color: var(--secondary);
+        border-color: var(--primary);
+    }
+}
