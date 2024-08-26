@@ -1,4 +1,5 @@
 import Dashboard from '../P-admin/Dashboard/Dashboard';
+import UserList from '../P-admin/UserList/UserList';
 import UserInfo from '../p-user/UserInfo/UserInfo';
 import UserLoc from '../p-user/UserLoc/UserLoc';
 import UserOrder from '../p-user/UserOrder/UserOrder';
@@ -62,7 +63,7 @@ function Panel() {
                 </div> */}
             <div className="col-12">
                     {panelMenu === "Dashboard" && (<Dashboard/>)}
-                    {panelMenu === "user_list" && (<h1>user_list</h1>)}
+                    {panelMenu === "user_list" && (<UserList/>)}
                     {panelMenu === "shop_list" && (<h1>shop_list</h1>)}
                     {panelMenu === "coffee_list" && (<h1>coffee_list</h1>)}
                 </div>
