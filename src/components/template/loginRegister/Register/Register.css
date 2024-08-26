@@ -1,0 +1,9 @@
+.register{
+    display: block;
+    width: 100%;
+    margin-bottom: 8rem;
+}
+.register_img{
+    width: 100%;
+    border-radius: 1rem;
+}
