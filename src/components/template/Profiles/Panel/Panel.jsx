@@ -1,5 +1,6 @@
 import Dashboard from '../P-admin/Dashboard/Dashboard';
 import ShopList from '../P-admin/ShopList/ShopList';
+import TakeCoffee from '../P-admin/TakeCoffee/TakeCoffee';
 import UserList from '../P-admin/UserList/UserList';
 import UserInfo from '../p-user/UserInfo/UserInfo';
 import UserLoc from '../p-user/UserLoc/UserLoc';
@@ -66,7 +67,7 @@ function Panel() {
                     {panelMenu === "Dashboard" && (<Dashboard/>)}
                     {panelMenu === "user_list" && (<UserList/>)}
                     {panelMenu === "shop_list" && (<ShopList/>)}
-                    {panelMenu === "coffee_list" && (<h1>coffee_list</h1>)}
+                    {panelMenu === "coffee_list" && (<TakeCoffee/>)}
                 </div>
             </div>
         </div>
