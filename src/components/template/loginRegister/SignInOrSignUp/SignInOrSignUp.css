@@ -1,0 +1,71 @@
+.loginRegister_btn{
+    display: block;
+    margin-bottom: 2rem;
+    font-family: var(--danaBlack);
+    font-size: 1.3rem !important;
+    color: var(--white);
+    background-color: var(--primary);
+    outline: none;
+    border: 1px solid ;
+    border-radius: 0.5rem;
+    transition: all 0.4s linear;
+    &:hover{
+        background-color: unset;
+        color: var(--primary);
+    }
+}
+.loginRegister_title{
+    display: block;
+    font-family: var(--danaBold);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+/* form */
+.lrForm{
+    display: block;
+    margin-top: 1rem;
+    background-color: var(--primary);
+    border-radius: 1rem;
+    padding: 1rem;
+    color: var(--white);
+}
+
+.lrFormBox{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.lrForm_text{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+.lrForm_input{
+    display: block;
+    width: 100%;
+    height: 2.7rem;
+    outline: none;
+    border: none;
+    border-radius: 0.6rem;
+}
+.lrForm_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.7rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    border-radius: 0.6rem;
+    background-color: var(--white);
+    transition: all 0.4 linear;
+    &:hover{
+        background-color: var(--info);
+        color: var(--primary);
+    }
+}
