@@ -4,7 +4,7 @@ import Shop from "./page/Shop/Shop";
 import Shopping from "./page/Shopping/Shopping";
 import Favorite from "./page/Favorite/Favorite";
 import Profiles from "./page/Profiles/Profiles";
-
+import ShopDetails from './page/ShopDetails/ShopDetails';
 
 const routes = [
     {path:"/" , element:<Home/>},
@@ -13,6 +13,7 @@ const routes = [
     {path:"/Shopping" , element:<Shopping/>},
     {path:"/Favorite" , element:<Favorite/>},
     {path:"/Profiles" , element:<Profiles/>},
+    {path:"/Shop-d" , element:<ShopDetails/>},
 ]
 
 export default routes;
