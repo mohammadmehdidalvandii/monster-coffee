@@ -1,0 +1,9 @@
+.login{
+    display: block;
+    width: 100%;
+    margin-bottom: 8rem;
+}
+.login_img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
