@@ -2,7 +2,7 @@ import CoffeeCard from '../../../modules/CoffeeCard/CoffeeCard'
 import Title from '../../../modules/Title/Title'
 import './Coffee.css'
 
-function Coffee() {
+function Coffee({coffees}) {
   return (
     <section className="coffee">
         <div className="containers">
@@ -12,24 +12,14 @@ function Coffee() {
                 </div>
             </div>
             <div className="row mt-3 row-gap-4">
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                    <CoffeeCard/>
+                {coffees.slice(0,6).map(coffee => (
+                <div className="col-lg-6 col-md-6 col-sm-12" key={coffee.id}>
+                    <CoffeeCard
+                        {...coffee}
+                        price={coffee.sizes.find(size => size.size === 'کوچیک').price}
+                    />
                 </div>
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                    <CoffeeCard/>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                    <CoffeeCard/>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                    <CoffeeCard/>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                    <CoffeeCard/>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12">
-                    <CoffeeCard/>
-                </div>
+                ))}
             </div>
         </div>
     </section>

@@ -23,8 +23,8 @@ import headTitle from "../../utils/HeadTitle"
    <Category/>
    <Popular coffees={coffees}/>
    <Suggestion coffees={coffees}/>
-   <Collections/>
-   <Coffee/>
+   <Collections />
+   <Coffee coffees={coffees}/>
    </>
   )
 }
