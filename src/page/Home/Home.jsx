@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import Banner from "../../components/template/home/Banner/Banner"
 import Category from "../../components/template/home/Category/Category"
 import Coffee from "../../components/template/home/Coffee/Coffee"
@@ -8,13 +9,19 @@ import headTitle from "../../utils/HeadTitle"
 
 
  function Home() {
+  const [coffees , setCoffees] = useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:3000/coffees')
+    .then(res=>res.json())
+    .then(data=>setCoffees(data))
+  },[])
 
  headTitle("خانه")
   return (
    <>
    <Banner/>
    <Category/>
-   <Popular/>
+   <Popular coffees={coffees}/>
    <Suggestion/>
    <Collections/>
    <Coffee/>
