@@ -7,7 +7,8 @@ import Suggestion from "../../components/template/home/Suggestion/Suggestion"
 import headTitle from "../../utils/HeadTitle"
 
 
-function Home() {
+ function Home() {
+
  headTitle("خانه")
   return (
    <>
