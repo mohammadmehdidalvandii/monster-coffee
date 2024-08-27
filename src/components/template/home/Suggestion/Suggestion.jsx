@@ -7,7 +7,9 @@ import 'swiper/css'
 
 import CoffeeCard from '../../../modules/CoffeeCard/CoffeeCard'
 
-function Suggestion() {
+function Suggestion({coffees}) {
+    const coffesSugest = coffees.filter(coffee=> coffee.popular === true)
+    
   return (
     <section className="suggestion">
         <div className="containers">
@@ -43,27 +45,15 @@ function Suggestion() {
                       }
         }}
       >
-        <SwiperSlide>
-            <CoffeeCard/>
+        {coffesSugest.reverse().map(coffee=>(
+        <SwiperSlide key={coffee.id}>
+            <CoffeeCard
+            
+                {...coffee}
+                price={coffee.sizes.find(size=>size.size === "کوچیک").price}
+            />
         </SwiperSlide>
-        <SwiperSlide>
-            <CoffeeCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <CoffeeCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <CoffeeCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <CoffeeCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <CoffeeCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <CoffeeCard/>
-        </SwiperSlide>
+        ))}
         <SwiperSlide>
             <Link to='/' className='suggestion_showMore'>مشاهده بیشتر</Link>
         </SwiperSlide>

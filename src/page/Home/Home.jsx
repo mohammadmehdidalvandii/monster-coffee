@@ -22,7 +22,7 @@ import headTitle from "../../utils/HeadTitle"
    <Banner/>
    <Category/>
    <Popular coffees={coffees}/>
-   <Suggestion/>
+   <Suggestion coffees={coffees}/>
    <Collections/>
    <Coffee/>
    </>
