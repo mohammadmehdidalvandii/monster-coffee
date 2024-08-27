@@ -4,6 +4,7 @@ import { FaHeart, FaHouse, FaLocationDot, FaUser } from 'react-icons/fa6';
 import { BsShop } from 'react-icons/bs';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
+import { MdLogin } from 'react-icons/md';
 
 function MenuBar() {
     const locations = useLocation();
@@ -59,12 +60,20 @@ function MenuBar() {
                         <span className="d-none d-md-block menuBar_link_text">مورد علاقه</span>
                     </Link>
                 </li>
-                <li className="menuBar_item">
+                {/* <li className="menuBar_item">
                     <Link to='/Profiles' className={activeMenu === '/Profiles' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaUser/>
                         </span>
                         <span className="d-none d-md-block menuBar_link_text">پروفایل</span>
+                    </Link>
+                </li> */}
+                <li className="menuBar_item">
+                    <Link to='/LoginRegister' className={activeMenu === '/LoginRegister' ? "menuBar_item_link_active" :"menuBar_item_link"}>
+                        <span className="menuBar_link_icon">
+                            <MdLogin/>
+                        </span>
+                        <span className="d-none d-md-block menuBar_link_text">ورود | ثبت نام</span>
                     </Link>
                 </li>
             </ul>
