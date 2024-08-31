@@ -1,14 +1,22 @@
 import './Store.css';
 import Title from '../../../modules/Title/Title';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CoffeeCard from '../../../modules/CoffeeCard/CoffeeCard';
 
 function Store() {
     const [shopMenu , setShopMenu] = useState("coffee")
+    const [coffees , setCoffees] = useState([]);
+    console.log(coffees)
 
     const handlerMenuShop = (menuID)=>{
         setShopMenu(menuID);
     }
+
+    useEffect(()=>{
+        fetch('http://localhost:3000/coffees')
+        .then(res=>res.json())
+        .then(data=>setCoffees(data))
+    },[])
 
   return (
     <section className="store">
@@ -25,18 +33,18 @@ function Store() {
                     onClick={()=>handlerMenuShop("coffee")}
                     > قهوه</button>
                     <button 
-                    className={shopMenu === "coffee_filter" ? "store_btn_active" :"store_btn"}
-                    onClick={()=>handlerMenuShop("coffee_filter")}
-                    > قهوه فیلتر شد</button>
+                    className={shopMenu === "coffee_ice" ? "store_btn_active" :"store_btn"}
+                    onClick={()=>handlerMenuShop("coffee_ice")}
+                    >قهوه خنک</button>
                     <button 
-                    className={shopMenu === "coffee_fast" ? "store_btn_active" :"store_btn"}
-                    onClick={()=>handlerMenuShop("coffee_fast")}
-                    > قهوه فوری</button>
+                    className={shopMenu === "coffee_ess" ? "store_btn_active" :"store_btn"}
+                    onClick={()=>handlerMenuShop("coffee_ess")}
+                    > قهوه اسپرسو</button>
                     <button 
-                    className={shopMenu === "coffee_black" ? "store_btn_active" :"store_btn"}
-                    onClick={()=>handlerMenuShop("coffee_black")}
-                    > قهوه سیاه</button>
-                    <button 
+                    className={shopMenu === "coffee_trk" ? "store_btn_active" :"store_btn"}
+                    onClick={()=>handlerMenuShop("coffee_trk")}
+                    > قهوه ترک</button>
+                    {/* <button 
                     className={shopMenu === "coffee_white" ? "store_btn_active" :"store_btn"}
                     onClick={()=>handlerMenuShop("coffee_white")}
                     > قهوه سفید</button>
@@ -55,92 +63,60 @@ function Store() {
                     <button 
                     className={shopMenu === "coffee_robusta" ? "store_btn_active" :"store_btn"}
                     onClick={()=>handlerMenuShop("coffee_robusta")}
-                    > قهوه روبوستا</button>
+                    > قهوه روبوستا</button> */}
                 </div>
             </div>
 
             <div className="row mt-5 row-gap-4">
                 {shopMenu === "coffee" && (
                    <>
-                     <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
+                   {coffees.map(coffee=>(
+                        <div className="col-lg-3 col-md-6 col-sm-12" key={coffee.id}>
+                        <CoffeeCard 
+                            {...coffee}
+                            price={coffee.sizes.find(size=>size.size === "کوچیک").price}
+                        />
+                         </div>
+                   ))}
                    </>
                 )}
-                {shopMenu === "coffee_filter" && (
+                {shopMenu === "coffee_ice" && (
                      <>
-                     <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
+                        {coffees.filter(coffee => coffee.categoryId === 2).map(item =>(
+                              <div className="col-lg-3 col-md-6 col-sm-12" key={item.id}>
+                              <CoffeeCard
+                                {...item}
+                                price={item.sizes.find(size=>size.size === "کوچیک").price}
+                              />
+                          </div>
+                        ))}
                    </>
                 )}
-                {shopMenu === "coffee_fast" && ( <>
-                     <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                   </>)}
-                {shopMenu === "coffee_black" && (
+                {shopMenu === "coffee_ess" && (
                      <>
-                     <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
-                    <div className="col-lg-3 col-md-6 col-sm-12">
-                        <CoffeeCard/>
-                    </div>
+                    {coffees.filter(coffee => coffee.categoryId === 3).map(item =>(
+                              <div className="col-lg-3 col-md-6 col-sm-12" key={item.id}>
+                              <CoffeeCard
+                                {...item}
+                                price={item.sizes.find(size=>size.size === "کوچیک").price}
+                              />
+                          </div>
+                        ))}
                    </>
                 )}
-                {shopMenu === "coffee_white" && (
+                {shopMenu === "coffee_trk" && (
+                     <>
+                  {coffees.filter(coffee => coffee.categoryId === 4).map(item =>(
+                              <div className="col-lg-3 col-md-6 col-sm-12" key={item.id}>
+                              <CoffeeCard
+                                {...item}
+                                price={item.sizes.find(size=>size.size === "کوچیک").price}
+                              />
+                          </div>
+                        ))}
+                   </>
+                )}
+                {/* {shopMenu === "coffee_white" && (
                      <>
                      <div className="col-lg-3 col-md-6 col-sm-12">
                         <CoffeeCard/>
@@ -243,7 +219,7 @@ function Store() {
                         <CoffeeCard/>
                     </div>
                    </>
-                )}
+                )} */}
             </div>
         </div>
     </section>
