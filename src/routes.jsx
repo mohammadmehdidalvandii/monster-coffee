@@ -14,7 +14,7 @@ const routes = [
     {path:"/Shopping" , element:<Shopping/>},
     {path:"/Favorite" , element:<Favorite/>},
     {path:"/Profiles" , element:<Profiles/>},
-    {path:"/Shop-d" , element:<ShopDetails/>},
+    {path:"/Shop-d/:id" , element:<ShopDetails/>},
     {path:"/LoginRegister" , element:<LoginRegister/>},
 ]
 

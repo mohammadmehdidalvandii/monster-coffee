@@ -2,10 +2,10 @@ import "./CoffeeCard.css";
 import { Link } from "react-router-dom";
 import { FaPlus, FaStar } from "react-icons/fa";
 
-function CoffeeCard({name ,price}) {
+function CoffeeCard({name ,price , id}) {
   return (
     <>
-      <Link to="/" className="coffeeCard">
+      <Link to={`/Shop-d/${id}`} className="coffeeCard">
         <img src="/images/coffee.jpg" alt="coffee" className="coffeeCard_img" />
         <div className="coffeeCard_content">
           <h6 className="coffeeCard_title">{name}</h6>
