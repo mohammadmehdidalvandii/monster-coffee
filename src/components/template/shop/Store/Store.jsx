@@ -6,7 +6,6 @@ import CoffeeCard from '../../../modules/CoffeeCard/CoffeeCard';
 function Store() {
     const [shopMenu , setShopMenu] = useState("coffee")
     const [coffees , setCoffees] = useState([]);
-    console.log(coffees)
 
     const handlerMenuShop = (menuID)=>{
         setShopMenu(menuID);
