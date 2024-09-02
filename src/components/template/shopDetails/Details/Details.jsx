@@ -2,10 +2,11 @@ import { FaHeart } from 'react-icons/fa';
 import './Details.css';
 import { useState } from 'react';
 import { showSwal } from '../../../../utils/Helpers';
+import { json } from 'react-router-dom';
 
 
 function Details({coffees}) {
-    const [selectSize , SetSelectSize] = useState();
+    const [selectSize , SetSelectSize] = useState(null || "");
     const [price ,  setPrice] = useState()
 
 
@@ -37,6 +38,31 @@ function Details({coffees}) {
                     showSwal("محصول از قبل وجود دارد","error","متوجه شدم")
                 }
       }
+
+    //   Add To Basket 
+    const addToBasket = (coffeeId)=>{
+        const basket = JSON.parse(localStorage.getItem("basket") || "[]");
+
+        const isInBasket = basket.some((item)=> item.id === coffeeId);
+
+        if(!isInBasket){
+            if(selectSize === "" || null){
+                showSwal("لظفا سایز مورد نظر انتخاب کنید","error","فهمیدم")
+            } else{
+                let newBasket = {
+                    id: coffeeId,
+                    name: coffees.name ,
+                    size :selectSize ,
+                    price : price,
+                }
+                basket.push(newBasket);
+                localStorage.setItem("basket" , JSON.stringify(basket));
+                showSwal("محصول به سبد خرید اضافه شد","success","فهمیدم")
+            }
+        }else{
+            showSwal("محصول در سبد خرید موجود است","success","فهمیدم")
+        }
+    }
    
   return (
    <section className="details">
@@ -60,7 +86,7 @@ function Details({coffees}) {
                                         <button className="details_btn_favorite" onClick={addToWishlist}>
                                             <FaHeart/>
                                         </button>
-                                        <button className="details_btn">
+                                        <button className="details_btn" onClick={()=>addToBasket(coffees.id)}>
                                             افزودن سبد خرید
                                         </button>
                                     </div>
