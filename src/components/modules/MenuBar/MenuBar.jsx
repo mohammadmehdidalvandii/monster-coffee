@@ -56,6 +56,7 @@ function MenuBar() {
                     <Link to='/Favorite' className={activeMenu === '/Favorite' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaHeart/>
+                            <sub className="menubar_link_number">0</sub>
                         </span>
                         <span className="d-none d-md-block menuBar_link_text">مورد علاقه</span>
                     </Link>

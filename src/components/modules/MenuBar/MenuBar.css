@@ -37,7 +37,14 @@
 }
 .menuBar_link_icon{
 display: block;
+position: relative;
 font-size: 1.2rem;
+.menubar_link_number{
+    position: absolute;
+    top: 0;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
 }
 .menuBar_link_text{
     display: block;
