@@ -9,7 +9,15 @@ import { MdLogin } from 'react-icons/md';
 function MenuBar() {
     const locations = useLocation();
     const [activeMenu , setActiveMen] = useState('/')
-    
+    const [basketItem ,  setBasketItem] = useState()
+
+
+    useEffect(()=>{
+        const basket = JSON.parse(localStorage.getItem("basket")|| "[]")
+        setBasketItem(basket.length)
+    },[basketItem]);
+
+
     useEffect(()=>{
         const pathName= locations.pathname;
         setActiveMen(pathName);
@@ -56,7 +64,7 @@ function MenuBar() {
                     <Link to='/Favorite' className={activeMenu === '/Favorite' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <FaHeart/>
-                            <sub className="menubar_link_number">0</sub>
+                            <sub className="menubar_link_number">{basketItem}</sub>
                         </span>
                         <span className="d-none d-md-block menuBar_link_text">مورد علاقه</span>
                     </Link>
