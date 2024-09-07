@@ -54,3 +54,8 @@ body{
   box-shadow: 0 0 25px var(--info);
   border-radius: 0.5rem;
 }
+/* <<<< swal-button >>>> */
+.swal-button{
+  background-color: var(--primary);
+  transition: all 0.4s linear;
+}
