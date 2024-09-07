@@ -1,10 +1,34 @@
 import { Link } from 'react-router-dom';
 import './Basket.css';
 import ShoppingCard from '../ShoppingCard/ShoppingCard';
-
+import { showSwal } from '../../../../utils/Helpers';
 
 function Basket() {
     const basket = JSON.parse(localStorage.getItem("basket") || "[]");
+
+    // add Logic Removed Cart Basket
+    const handlerRemoved = (coffeeId , coffeeSize)=>{
+        swal({
+            title:"آیا از حذف قهوه خود اطمینان دارید ؟",
+            icon:"warning",
+            buttons:["نه","اره"]
+        })
+        .then((result)=>{
+            if(result){
+                const newBasket  = basket.filter((item)=> item.id !== coffeeId || item.size !== coffeeSize);
+            localStorage.setItem("basket" , JSON.stringify(newBasket));
+            swal({
+                title:"قهوه مورد نظر شمابا موفقیت حذف شد",
+                icon:"success",
+                buttons:"فهمیدم"
+            })
+            .then(()=>{
+                window.location.reload()
+            })
+            }
+        })
+
+    }
 
   return (
     <section className="basket">
@@ -20,7 +44,7 @@ function Basket() {
                 </div> 
                     ):(
                        basket.map(item=>(
-                        <ShoppingCard key={item.id} {...item}/>
+                        <ShoppingCard key={item.id} {...item} handlerRemoved={()=>handlerRemoved(item.id , item.size)}/>
                        )) 
                     )}
 
