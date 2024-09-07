@@ -15,7 +15,7 @@ function MenuBar() {
     useEffect(()=>{
         const basket = JSON.parse(localStorage.getItem("basket")|| "[]")
         setBasketItem(basket.length)
-    },[]);
+    },[localStorage.getItem("basket") ]);
 
 
     useEffect(()=>{

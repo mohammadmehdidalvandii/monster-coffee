@@ -43,7 +43,7 @@ function Details({coffees}) {
     const addToBasket = (coffeeId)=>{
         const basket = JSON.parse(localStorage.getItem("basket") || "[]");
 
-        const isInBasket = basket.some((item)=> item.id === coffeeId);
+        const isInBasket = basket.some((item)=> item.id === coffeeId && item.sizes  === selectSize);
 
         if(!isInBasket){
             if(selectSize === "" || null){
@@ -57,7 +57,15 @@ function Details({coffees}) {
                 }
                 basket.push(newBasket);
                 localStorage.setItem("basket" , JSON.stringify(basket));
-                showSwal("محصول به سبد خرید اضافه شد","success","فهمیدم")
+                swal({
+                    title:"قهوه به سبد خرید اضافه شد",
+                    icon:"success",
+                    buttons:"فهمیدم"
+                })
+                .then(()=>{
+                    window.location.reload()
+                })
+               
             }
         }else{
             showSwal("محصول در سبد خرید موجود است","success","فهمیدم")
