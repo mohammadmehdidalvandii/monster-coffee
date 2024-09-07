@@ -58,6 +58,7 @@ function Details({coffees}) {
                         name: coffees.name ,
                         size :selectSize ,
                         price : price,
+                        count:1,
                     }
                     basket.push(newBasket);
                     localStorage.setItem("basket" , JSON.stringify(basket));

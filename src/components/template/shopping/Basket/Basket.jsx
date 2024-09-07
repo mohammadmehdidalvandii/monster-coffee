@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import './Basket.css';
 import ShoppingCard from '../ShoppingCard/ShoppingCard';
 import { showSwal } from '../../../../utils/Helpers';
+import { useState } from 'react';
 
 function Basket() {
     const basket = JSON.parse(localStorage.getItem("basket") || "[]");
+    const [basketItems, setBasketItems] = useState(basket.map(item => ({ ...item, count: item.count || 1 })));
 
     // add Logic Removed Cart Basket
     const handlerRemoved = (coffeeId , coffeeSize)=>{
@@ -27,8 +29,26 @@ function Basket() {
             })
             }
         })
-
     }
+
+    // add Logic counters 
+        const handlerBtnPlus = (count, size) => {
+            const newBasketItems = [...basketItems];
+            const item = newBasketItems.find((item) => item.count === count && item.size === size);
+            item.count++;
+            setBasketItems(newBasketItems);
+            localStorage.setItem("basket", JSON.stringify(newBasketItems));
+          }
+          
+          const handlerBtnMinus = (count, size) => {
+            const newBasketItems = [...basketItems];
+            const item = newBasketItems.find((item) => item.count === count && item.size === size);
+            if (item.count > 1) {
+              item.count--;
+            }
+            setBasketItems(newBasketItems);
+            localStorage.setItem("basket", JSON.stringify(newBasketItems));
+          }
 
   return (
     <section className="basket">
@@ -44,7 +64,12 @@ function Basket() {
                 </div> 
                     ):(
                        basket.map(item=>(
-                        <ShoppingCard key={item.id} {...item} handlerRemoved={()=>handlerRemoved(item.id , item.size)}/>
+                        <ShoppingCard
+                         key={item.id} {...item} count={item.count}
+                         handlerRemoved={()=>handlerRemoved(item.id , item.size)}
+                         handlerBtnPlus={()=>handlerBtnPlus(item.count , item.size , item.price)}
+                        handlerBtnMinus={()=>handlerBtnMinus(item.count , item.size , item.price)}
+                        />
                        )) 
                     )}
 
