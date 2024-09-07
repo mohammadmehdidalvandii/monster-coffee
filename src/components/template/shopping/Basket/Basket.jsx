@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 import './Basket.css';
 import ShoppingCard from '../ShoppingCard/ShoppingCard';
 import { showSwal } from '../../../../utils/Helpers';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Basket() {
     const basket = JSON.parse(localStorage.getItem("basket") || "[]");
     const [basketItems, setBasketItems] = useState(basket.map(item => ({ ...item, count: item.count || 1 })));
+    const [totalPrice , setTotalPrice] = useState(0)
 
     // add Logic Removed Cart Basket
     const handlerRemoved = (coffeeId , coffeeSize)=>{
@@ -49,7 +50,16 @@ function Basket() {
             setBasketItems(newBasketItems);
             localStorage.setItem("basket", JSON.stringify(newBasketItems));
           }
-
+        // TotalPrice 
+        useEffect(calcTotalPrice , [basket])
+        function calcTotalPrice (){
+            let price = 0
+            if(basket.length){
+                price = basket.reduce((prev , current)=> prev + current.price * current.count , 0)
+                setTotalPrice(price)
+            }
+            setTotalPrice(price)
+        }
   return (
     <section className="basket">
         <div className="containers">
@@ -80,7 +90,7 @@ function Basket() {
                             <ul className="basket_bill_items">
                                 <li className="basket_bill_item">
                                     <span className="basket_bill_title">جمع کل :</span>
-                                    <span className="basket_bill_number">120 تومان</span>
+                                    <span className="basket_bill_number">{totalPrice} تومان</span>
                                 </li>
                             </ul>
                             <Link to='#' className='basket_bill_pay'>پرداخت</Link>
