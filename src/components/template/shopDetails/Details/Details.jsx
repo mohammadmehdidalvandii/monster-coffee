@@ -44,28 +44,33 @@ function Details({coffees}) {
         const basket = JSON.parse(localStorage.getItem("basket") || "[]");
 
         const isInBasket = basket.some((item)=> item.id === coffeeId && item.sizes  === selectSize);
+        const isInSelectSize = basket.some((item)=>item.size === selectSize);
 
         if(!isInBasket){
-            if(selectSize === "" || null){
-                showSwal("لظفا سایز مورد نظر انتخاب کنید","error","فهمیدم")
+            if(isInSelectSize){
+                showSwal("این سایز در سبد خرید موجود است","error","فهمیدم")
             } else{
-                let newBasket = {
-                    id: coffeeId,
-                    name: coffees.name ,
-                    size :selectSize ,
-                    price : price,
+                if(selectSize === "" || null){
+                    showSwal("لظفا سایز مورد نظر انتخاب کنید","error","فهمیدم")
+                } else{
+                    let newBasket = {
+                        id: coffeeId,
+                        name: coffees.name ,
+                        size :selectSize ,
+                        price : price,
+                    }
+                    basket.push(newBasket);
+                    localStorage.setItem("basket" , JSON.stringify(basket));
+                    swal({
+                        title:"قهوه به سبد خرید اضافه شد",
+                        icon:"success",
+                        buttons:"فهمیدم"
+                    })
+                    .then(()=>{
+                        window.location.reload()
+                    })
+                   
                 }
-                basket.push(newBasket);
-                localStorage.setItem("basket" , JSON.stringify(basket));
-                swal({
-                    title:"قهوه به سبد خرید اضافه شد",
-                    icon:"success",
-                    buttons:"فهمیدم"
-                })
-                .then(()=>{
-                    window.location.reload()
-                })
-               
             }
         }else{
             showSwal("محصول در سبد خرید موجود است","success","فهمیدم")

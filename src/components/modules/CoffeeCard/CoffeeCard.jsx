@@ -2,7 +2,7 @@ import "./CoffeeCard.css";
 import { Link } from "react-router-dom";
 import { FaPlus, FaStar } from "react-icons/fa";
 
-function CoffeeCard({name ,price , id}) {
+function CoffeeCard({name ,price , id }) {
   return (
     <>
       <Link to={`/Shop-d/${id}`} className="coffeeCard">
@@ -17,9 +17,6 @@ function CoffeeCard({name ,price , id}) {
           </div>
           <div className="coffeeCard_price_addCard">
             <span className="coffeeCard_price">{price} تومان</span>
-            <button className="coffeeCard_addToBasket">
-              <FaPlus />
-            </button>
           </div>
         </div>
       </Link>
