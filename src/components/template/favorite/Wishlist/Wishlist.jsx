@@ -5,6 +5,29 @@ import './Wishlist.css';
 
 function Wishlist() {
   const items = JSON.parse(localStorage.getItem("wishlist") || "[]");
+
+  // logic removed Coffee Wishlist
+  const handlerRemovedWishlist = (coffeeID)=>{
+    swal({
+      title:"آیا از حذف قهوه در لیست اطمینان دارید ؟",
+      icon:"warning",
+      buttons:["نه","اره"]
+    })
+    .then((result)=>{
+      if(result){
+        const newWishlist = items.filter((item)=>item.id !== coffeeID);
+        localStorage.setItem("wishlist" , JSON.stringify(newWishlist))
+        swal({
+          title:"قهوه مورد نظر از لیست شما حذف شد",
+          icon:"success",
+          buttons:"فهمیدم"
+        })
+        .then(()=>{
+          window.location.reload()
+        })
+      }
+    })
+  }
   
   return (
    <section className="wishlist">
@@ -20,7 +43,11 @@ function Wishlist() {
                     </div> 
               ):(
                 items.map(item=>(
-                  <WishlistCard key={item.id} {...item}/>
+                  <WishlistCard
+                   key={item.id}
+                    {...item}
+                      handlerRemovedWishlist={()=>handlerRemovedWishlist(item.id)}
+                    />
                 ))
               )}
                    
