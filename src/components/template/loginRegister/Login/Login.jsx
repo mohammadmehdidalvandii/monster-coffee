@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { showSwal } from '../../../../utils/Helpers';
+import Cookies from 'js-cookie';
 
 
 function Login() {
@@ -22,8 +23,10 @@ function Login() {
             const isUser = data.find((item)=> item.email === email && item.password === password);
             console.log(isUser)
             if(isUser){
-                const expires = new Date(Date.now() + 60 *60 *24 *3)
-                document.cookie = `user=${JSON.stringify(`userName=${isUser.name}`+`userId=${isUser.id}`+`userRole=${isUser.role}`)};expires=${expires}`;
+                // document.cookie = `user=${JSON.stringify(`userName=${isUser.name}`+`userId=${isUser.id}`+`userRole=${isUser.role}`)};expires=${expires}`;
+                const expiresTime = new Date(Date.now() + 60 *60 *24 *3)
+                const token =[`userName=${isUser.name}`,`userId=${isUser.id}`,`userRole=${isUser.role}`]
+                Cookies.set("token" , token , expiresTime)
                 swal({
                     title:"ورود شما با موفقیت انجام شد",
                     icon:"success",
