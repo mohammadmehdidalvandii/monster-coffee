@@ -27,6 +27,7 @@ function Login() {
                 const expiresTime = new Date(Date.now() + 60 *60 *24 *3)
                 const token =[`userName=${isUser.name}`,`userId=${isUser.id}`,`userRole=${isUser.role}`]
                 Cookies.set("token" , token , expiresTime)
+                Cookies.set("isAdmin" , isUser.role)
                 swal({
                     title:"ورود شما با موفقیت انجام شد",
                     icon:"success",
