@@ -5,11 +5,22 @@ import { BsShop } from 'react-icons/bs';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { MdLogin } from 'react-icons/md';
+import Cookies from 'js-cookie';
 
 function MenuBar() {
     const locations = useLocation();
     const [activeMenu , setActiveMen] = useState('/')
-    const [basketItem ,  setBasketItem] = useState()
+    const [basketItem ,  setBasketItem] = useState();
+    const [isLogin , setIsLogin] = useState(false)
+
+    const token = Cookies.get("token");
+    useEffect(()=>{
+        if(token){
+            setIsLogin(true)
+        }else{
+            setIsLogin(false)
+        }
+    },[token])
 
 
     useEffect(()=>{
@@ -69,15 +80,18 @@ function MenuBar() {
                         <span className="d-none d-md-block menuBar_link_text">مورد علاقه</span>
                     </Link>
                 </li>
-                {/* <li className="menuBar_item">
-                    <Link to='/Profiles' className={activeMenu === '/Profiles' ? "menuBar_item_link_active" :"menuBar_item_link"}>
-                        <span className="menuBar_link_icon">
-                            <FaUser/>
-                        </span>
-                        <span className="d-none d-md-block menuBar_link_text">پروفایل</span>
-                    </Link>
-                </li> */}
-                <li className="menuBar_item">
+
+                {isLogin ? (
+                     <li className="menuBar_item">
+                     <Link to='/Profiles' className={activeMenu === '/Profiles' ? "menuBar_item_link_active" :"menuBar_item_link"}>
+                         <span className="menuBar_link_icon">
+                             <FaUser/>
+                         </span>
+                         <span className="d-none d-md-block menuBar_link_text">پروفایل</span>
+                     </Link>
+                 </li>
+                ):(
+                    <li className="menuBar_item">
                     <Link to='/LoginRegister' className={activeMenu === '/LoginRegister' ? "menuBar_item_link_active" :"menuBar_item_link"}>
                         <span className="menuBar_link_icon">
                             <MdLogin/>
@@ -85,6 +99,8 @@ function MenuBar() {
                         <span className="d-none d-md-block menuBar_link_text">ورود | ثبت نام</span>
                     </Link>
                 </li>
+                )}
+               
             </ul>
         </div>
     </section>
