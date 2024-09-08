@@ -1,11 +1,29 @@
 import { FaSearch } from 'react-icons/fa';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function Navbar() {
     const [fixNavTop , setFixNavTop] = useState(false);
+    const [search , setSearch] = useState("");
+    const navigate = useNavigate();
 
+    // logic search handler
+    const handlerSearch = ()=>{
+        if(search.trim()){
+            navigate(`/Search/${search}`)
+            setSearch("");
+        }
+    }
+    const handlerSearchEnter = (event)=>{
+        if(event.key === "Enter"){
+            if(search.trim()){
+                navigate(`/Search/${search}`)
+                setSearch("");
+            }
+        }
+    }
+ 
     useEffect(()=>{
         const fixNavbarToTop = ()=>{
             const currentScroll = window.pageYOffset;            
@@ -60,10 +78,17 @@ function Navbar() {
                 </Link>
             </div>
             <div className="navbar_search">
-                <span className="navbar_search_icon">
+                <span className="navbar_search_icon" onClick={handlerSearch}>
                     <FaSearch/>
                 </span>
-                <input type="text" className="navbar_search_input" placeholder='جستجو قهوه شما'/>
+                <input
+                 type="text"
+                 value={search}
+                 onChange={e=>setSearch(e.target.value)}
+                 onKeyDown={handlerSearchEnter}
+                 className="navbar_search_input"
+                  placeholder='جستجو قهوه شما'
+                  />
             </div>
         </div>
     </section>

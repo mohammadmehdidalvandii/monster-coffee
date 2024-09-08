@@ -17,7 +17,7 @@ const routes = [
     {path:"/Profiles" , element:<Profiles/>},
     {path:"/Shop-d/:id" , element:<ShopDetails/>},
     {path:"/LoginRegister" , element:<LoginRegister/>},
-    {path:"/Search" , element:<Search/>},
+    {path:"/Search/:value" , element:<Search/>},
 ]
 
 export default routes;
