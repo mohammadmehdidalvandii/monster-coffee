@@ -13,9 +13,7 @@ function Login() {
     // logic login Handler
     const loginHandler = (event)=>{
         event.preventDefault();
-        // validations 
-        
-      
+        // validations  
 
         fetch('http://localhost:3000/users')
         .then(res=>res.json())
