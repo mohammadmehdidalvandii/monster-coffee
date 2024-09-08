@@ -19,7 +19,7 @@ function WishlistCard({name , id , handlerRemovedWishlist}) {
               <MdDelete />
             </span>
           </button>
-          <Link to={`/Shop-d/:${id}`} className="wishlistCard_btn">
+          <Link to={`/Shop-d/${id}`} className="wishlistCard_btn">
             <span className="wishlistCard_btnText">افزودن</span>
             <span className="wishlistCard_btnIcon">
               <MdAddShoppingCart />
