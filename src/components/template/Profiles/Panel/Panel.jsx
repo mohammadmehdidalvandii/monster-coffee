@@ -19,7 +19,7 @@ function Panel() {
 // Set ADMIN or USER menu
   useEffect(() => {
     const admin = Cookies.get("isAdmin");
-    if (admin) {
+    if (admin === "ADMIN") {
       setIsAdmin(true);
     } else {
       setIsAdmin(false);
