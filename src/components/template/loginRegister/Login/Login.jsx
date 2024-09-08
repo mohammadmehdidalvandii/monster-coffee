@@ -19,7 +19,6 @@ function Login() {
         .then(res=>res.json())
         .then(data=>{
             const isUser = data.find((item)=> item.email === email && item.password === password);
-            console.log(isUser)
             if(isUser){
                 // document.cookie = `user=${JSON.stringify(`userName=${isUser.name}`+`userId=${isUser.id}`+`userRole=${isUser.role}`)};expires=${expires}`;
                 const expiresTime = new Date(Date.now() + 60 *60 *24 *3)
