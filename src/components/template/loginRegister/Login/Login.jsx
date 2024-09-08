@@ -15,7 +15,7 @@ function Login() {
         event.preventDefault();
         // validations  
 
-        fetch('http://localhost:3000/users')
+        fetch('https://datacoffeemonster.liara.run/users')
         .then(res=>res.json())
         .then(data=>{
             const isUser = data.find((item)=> item.email === email && item.password === password);

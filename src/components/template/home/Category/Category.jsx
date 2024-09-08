@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
     const [categoeies,setCategories ]= useState([]);
     
     useEffect(()=>{
-        fetch('http://localhost:3000/categorys')
+        fetch('https://datacoffeemonster.liara.run/categorys')
         .then(res => res.json())
         .then(data=> setCategories(data))
     },[]);

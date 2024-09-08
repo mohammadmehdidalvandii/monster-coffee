@@ -10,7 +10,7 @@ function ShopDetails() {
     const [detailsCoffees , setDetailsCoffees] = useState([]);
  
     useEffect(()=>{
-      fetch(`http://localhost:3000/coffees/${id}`)
+      fetch(`https://datacoffeemonster.liara.run/coffees/${id}`)
       .then(res => res.json())
       .then(data => setDetailsCoffees(data))
     },[])

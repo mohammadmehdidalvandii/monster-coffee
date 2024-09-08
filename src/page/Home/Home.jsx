@@ -11,7 +11,7 @@ import headTitle from "../../utils/HeadTitle"
  function Home() {
   const [coffees , setCoffees] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:3000/coffees')
+    fetch('https://datacoffeemonster.liara.run/coffees')
     .then(res=>res.json())
     .then(data=>setCoffees(data))
   },[])

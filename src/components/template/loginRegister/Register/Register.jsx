@@ -38,7 +38,7 @@ const handlerRegister = (e)=>{
     }
 
     // user Exist 
-    fetch(`http://localhost:3000/users?email=${email}`)
+    fetch(`https://datacoffeemonster.liara.run/users?email=${email}`)
     .then(res=> res.json())
     .then(data=> {
         if(data.email === email){
@@ -51,7 +51,7 @@ const handlerRegister = (e)=>{
                 password:password,
                 role:"USER"
             };
-            fetch('http://localhost:3000/users',{
+            fetch('https://datacoffeemonster.liara.run/users',{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
